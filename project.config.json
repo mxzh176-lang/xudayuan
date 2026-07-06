@@ -15,7 +15,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "latest",
-  "appid": "请替换为你的小程序AppID",
+  "appid": "wx2eae2c627e4c6b51",
   "projectname": "xudayuan-popsicle-member",
   "cloudfunctionRoot": "cloudfunctions/",
   "condition": {}
