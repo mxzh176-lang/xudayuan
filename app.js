@@ -1,7 +1,7 @@
 App({
   globalData: {
     storeName: "徐大源手工冰棍",
-    cloudEnv: "请替换为微信云开发环境ID"
+    cloudEnv: "100050446731"
   },
 
   onLaunch() {
