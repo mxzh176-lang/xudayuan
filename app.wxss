@@ -1,6 +1,6 @@
 page {
-  color: #183235;
-  background: #f6fbfa;
+  color: #432532;
+  background: #fff4f8;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
@@ -8,6 +8,9 @@ page {
   min-height: 100vh;
   padding: 24rpx;
   box-sizing: border-box;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 183, 204, 0.48), transparent 34%),
+    linear-gradient(180deg, #fff4f8 0%, #fff9fb 62%, #ffffff 100%);
 }
 
 .brand-card {
@@ -15,15 +18,17 @@ page {
   align-items: center;
   gap: 20rpx;
   padding: 24rpx;
-  border-radius: 16rpx;
+  border-radius: 28rpx;
   color: #fff;
-  background: #103f42;
+  background: linear-gradient(135deg, #ff6f9f 0%, #ff9cbe 58%, #ffc85c 100%);
+  box-shadow: 0 18rpx 42rpx rgba(255, 79, 139, 0.26);
 }
 
 .brand-logo {
   width: 96rpx;
   height: 96rpx;
-  border-radius: 16rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.78);
+  border-radius: 24rpx;
 }
 
 .brand-title {
@@ -35,7 +40,7 @@ page {
 .brand-subtitle {
   display: block;
   margin-top: 8rpx;
-  color: #bde1dd;
+  color: rgba(255, 255, 255, 0.86);
   font-size: 24rpx;
 }
 
@@ -43,6 +48,7 @@ page {
   margin: 28rpx 0 16rpx;
   font-size: 32rpx;
   font-weight: 800;
+  color: #5a2438;
 }
 
 .grid {
@@ -53,14 +59,14 @@ page {
 
 .card {
   padding: 24rpx;
-  border: 1rpx solid #dce9e7;
-  border-radius: 16rpx;
+  border: 1rpx solid #ffd5e2;
+  border-radius: 24rpx;
   background: #fff;
-  box-shadow: 0 10rpx 28rpx rgba(24, 50, 53, 0.06);
+  box-shadow: 0 12rpx 34rpx rgba(255, 79, 139, 0.09);
 }
 
 .stat-label {
-  color: #65797c;
+  color: #9a6b7c;
   font-size: 24rpx;
 }
 
@@ -69,30 +75,31 @@ page {
   margin-top: 10rpx;
   font-size: 40rpx;
   font-weight: 800;
+  color: #ff4f8b;
 }
 
 .muted {
-  color: #65797c;
+  color: #9a6b7c;
 }
 
 .pill {
   display: inline-flex;
   padding: 6rpx 14rpx;
   border-radius: 999rpx;
-  color: #0d6f68;
-  background: #e8f7f5;
+  color: #d92d70;
+  background: #ffe5ef;
   font-size: 22rpx;
   font-weight: 700;
 }
 
 .pill.warn {
-  color: #8a5b00;
-  background: #fff2c6;
+  color: #a45a00;
+  background: #fff0c2;
 }
 
 .pill.danger {
-  color: #a53030;
-  background: #ffe5e5;
+  color: #c21e56;
+  background: #ffd9e6;
 }
 
 .button-primary {
@@ -100,10 +107,11 @@ page {
   align-items: center;
   justify-content: center;
   height: 88rpx;
-  border-radius: 16rpx;
+  border-radius: 999rpx;
   color: #fff;
-  background: #0f8f86;
+  background: linear-gradient(135deg, #ff4f8b 0%, #ff83ae 100%);
   font-weight: 800;
+  box-shadow: 0 14rpx 28rpx rgba(255, 79, 139, 0.22);
 }
 
 .button-secondary {
@@ -111,9 +119,9 @@ page {
   align-items: center;
   justify-content: center;
   height: 88rpx;
-  border-radius: 16rpx;
-  color: #0d6f68;
-  background: #e8f7f5;
+  border-radius: 999rpx;
+  color: #d92d70;
+  background: #ffe5ef;
   font-weight: 800;
 }
 
@@ -121,8 +129,8 @@ page {
   width: 100%;
   min-height: 84rpx;
   padding: 0 22rpx;
-  border: 1rpx solid #dce9e7;
-  border-radius: 14rpx;
+  border: 1rpx solid #ffd5e2;
+  border-radius: 999rpx;
   box-sizing: border-box;
   background: #fff;
 }
@@ -142,6 +150,56 @@ page {
 
 .empty {
   padding: 60rpx 20rpx;
-  color: #65797c;
+  color: #9a6b7c;
   text-align: center;
+}
+
+.card.pressable,
+.button-primary,
+.button-secondary {
+  transition: transform 0.16s ease, opacity 0.16s ease;
+}
+
+.card.pressable:active,
+.button-primary:active,
+.button-secondary:active {
+  opacity: 0.82;
+  transform: scale(0.98);
+}
+
+.interactive-strip {
+  display: flex;
+  gap: 14rpx;
+  overflow-x: auto;
+  padding-bottom: 4rpx;
+}
+
+.chip {
+  flex: 0 0 auto;
+  padding: 16rpx 24rpx;
+  border-radius: 999rpx;
+  color: #d92d70;
+  background: #ffe5ef;
+  font-weight: 700;
+}
+
+.chip.active {
+  color: #fff;
+  background: #ff4f8b;
+}
+
+.sweet-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.sweet-card::after {
+  content: "";
+  position: absolute;
+  right: -28rpx;
+  top: -28rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 183, 204, 0.35);
 }

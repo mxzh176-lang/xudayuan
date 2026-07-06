@@ -1,3 +1,7 @@
 .grid view {
   box-sizing: border-box;
 }
+
+.reminder-card {
+  border-color: #ffc4d8;
+}

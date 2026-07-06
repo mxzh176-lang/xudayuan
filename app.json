@@ -9,13 +9,13 @@
   ],
   "window": {
     "navigationBarTitleText": "徐大源手工冰棍",
-    "navigationBarBackgroundColor": "#103f42",
+    "navigationBarBackgroundColor": "#ff6f9f",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#f6fbfa"
+    "backgroundColor": "#fff4f8"
   },
   "tabBar": {
-    "color": "#65797c",
-    "selectedColor": "#0f8f86",
+    "color": "#9a6b7c",
+    "selectedColor": "#ff4f8b",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [

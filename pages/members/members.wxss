@@ -1,3 +1,22 @@
 .card {
   display: block;
 }
+
+.member-actions {
+  display: flex;
+  gap: 12rpx;
+  margin-top: 18rpx;
+}
+
+.mini-action {
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  color: #d92d70;
+  background: #ffe5ef;
+  font-size: 22rpx;
+}
+
+.mini-action.hot {
+  color: #fff;
+  background: #ff8ab1;
+}

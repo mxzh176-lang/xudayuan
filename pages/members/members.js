@@ -1,6 +1,7 @@
 Page({
   data: {
     keyword: "",
+    filter: "all",
     members: []
   },
 
@@ -16,13 +17,19 @@ Page({
     this.setData({ keyword: event.detail.value });
   },
 
+  setFilter(event) {
+    this.setData({ filter: event.currentTarget.dataset.filter });
+    this.search();
+  },
+
   async search() {
     try {
       const res = await wx.cloud.callFunction({
         name: "memberService",
         data: {
           action: "list",
-          keyword: this.data.keyword
+          keyword: this.data.keyword,
+          filter: this.data.filter
         }
       });
       this.setData({ members: res.result.data });

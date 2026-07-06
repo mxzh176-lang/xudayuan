@@ -9,7 +9,7 @@
 
   <view class="section-title">待通知</view>
   <view class="list" wx:if="{{reminders.length}}">
-    <view class="card" wx:for="{{reminders}}" wx:key="_id">
+    <view class="card pressable reminder-card" wx:for="{{reminders}}" wx:key="_id">
       <view class="row">
         <view>
           <view>{{item.memberName}} <text class="muted">{{item.phone}}</text></view>

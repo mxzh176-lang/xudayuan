@@ -1,3 +1,14 @@
 radio {
   transform: scale(0.9);
 }
+
+.preview-card {
+  margin-top: 20rpx;
+  background: linear-gradient(135deg, #fff 0%, #fff0f6 100%);
+}
+
+.preview-money {
+  color: #ff4f8b;
+  font-size: 42rpx;
+  font-weight: 900;
+}

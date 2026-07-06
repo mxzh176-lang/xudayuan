@@ -1,21 +1,49 @@
 Page({
   data: {
+    quickProducts: [
+      { name: "绿豆冰棍", amount: 5 },
+      { name: "酸奶草莓", amount: 8 },
+      { name: "芒果牛奶", amount: 9 },
+      { name: "巧克力脆皮", amount: 10 }
+    ],
     form: {
       memberKey: "",
       product: "",
       quantity: 1,
       amount: "",
       payType: "balance"
-    }
+    },
+    previewAmount: "0.00",
+    previewPoints: 0
   },
 
   onInput(event) {
     const field = event.currentTarget.dataset.field;
     this.setData({ [`form.${field}`]: event.detail.value });
+    this.updatePreview();
   },
 
   onPayTypeChange(event) {
     this.setData({ "form.payType": event.detail.value });
+  },
+
+  pickProduct(event) {
+    this.setData({
+      "form.product": event.currentTarget.dataset.product,
+      "form.amount": event.currentTarget.dataset.amount
+    });
+    this.updatePreview();
+    wx.showToast({ title: "已选择商品", icon: "none" });
+  },
+
+  updatePreview() {
+    const amount = Number(this.data.form.amount || 0);
+    const quantity = Number(this.data.form.quantity || 1);
+    const total = Number((amount * quantity).toFixed(2));
+    this.setData({
+      previewAmount: total.toFixed(2),
+      previewPoints: Math.floor(total)
+    });
   },
 
   async submit() {
@@ -34,7 +62,7 @@ Page({
           record: {
             ...form,
             quantity: Number(form.quantity || 1),
-            amount: Number(form.amount || 0)
+            amount: Number(this.data.previewAmount || form.amount || 0)
           }
         }
       });
@@ -47,7 +75,9 @@ Page({
             wx.setClipboardData({ data: res.result.data.message });
           }
           this.setData({
-            form: { memberKey: "", product: "", quantity: 1, amount: "", payType: "balance" }
+            form: { memberKey: "", product: "", quantity: 1, amount: "", payType: "balance" },
+            previewAmount: "0.00",
+            previewPoints: 0
           });
         }
       });

@@ -8,7 +8,7 @@
   </view>
 
   <view class="section-title">云数据库集合</view>
-  <view class="card">
+  <view class="card pressable">
     <view>members：会员资料、余额、积分</view>
     <view class="muted">consumption_records：消费记录</view>
     <view class="muted">reminders：客户通知提醒</view>
@@ -16,12 +16,12 @@
 
   <view class="section-title">演示数据</view>
   <view class="button-primary" bindtap="seedDemo">初始化演示数据</view>
-  <view class="card" style="margin-top: 16rpx;">
+  <view class="card pressable" style="margin-top: 16rpx;">
     <view class="muted">用于下午演示：会创建 10 个真实会员案例，包含余额、积分、偏好和备注。正式导入客户数据前可清空集合。</view>
   </view>
 
   <view class="section-title">交付状态</view>
-  <view class="card">
+  <view class="card pressable">
     <view>小程序端：已完成</view>
     <view>云函数：已完成</view>
     <view>微信云部署：需填 AppID 与云环境 ID 后上传</view>

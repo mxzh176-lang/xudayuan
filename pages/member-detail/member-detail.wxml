@@ -1,5 +1,5 @@
 <view class="page">
-  <view class="card">
+  <view class="card pressable">
     <view class="section-title" style="margin-top:0;">基础信息</view>
     <input class="input" placeholder="姓名" value="{{form.name}}" data-field="name" bindinput="onInput" />
     <view style="height: 16rpx;"></view>
@@ -10,7 +10,7 @@
     <input class="input" placeholder="等级：普通/银卡/金卡/黑卡" value="{{form.level}}" data-field="level" bindinput="onInput" />
   </view>
 
-  <view class="card" style="margin-top: 20rpx;">
+  <view class="card pressable" style="margin-top: 20rpx;">
     <view class="section-title" style="margin-top:0;">账户信息</view>
     <input class="input" placeholder="积分" value="{{form.points}}" data-field="points" bindinput="onInput" type="digit" />
     <view style="height: 16rpx;"></view>
@@ -19,7 +19,7 @@
     <input class="input" placeholder="累计消费" value="{{form.spent}}" data-field="spent" bindinput="onInput" type="digit" />
   </view>
 
-  <view class="card" style="margin-top: 20rpx;">
+  <view class="card pressable" style="margin-top: 20rpx;">
     <view class="section-title" style="margin-top:0;">偏好备注</view>
     <input class="input" placeholder="生日，如 1995-06-18" value="{{form.birthday}}" data-field="birthday" bindinput="onInput" />
     <view style="height: 16rpx;"></view>

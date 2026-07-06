@@ -13,14 +13,17 @@ function memberNo() {
   return `M${Date.now().toString().slice(-8)}`;
 }
 
-async function list(keyword = "") {
-  const where = keyword
+async function list(keyword = "", filter = "all") {
+  let where = keyword
     ? _.or([
         { name: db.RegExp({ regexp: keyword, options: "i" }) },
         { phone: db.RegExp({ regexp: keyword, options: "i" }) },
         { memberNo: db.RegExp({ regexp: keyword, options: "i" }) }
       ])
     : {};
+  if (!keyword && filter === "low") where = { balance: _.lt(20) };
+  if (!keyword && filter === "gold") where = _.or([{ level: "金卡" }, { level: "黑卡" }]);
+  if (!keyword && filter === "active") where = { status: "活跃" };
   const res = await db.collection("members").where(where).orderBy("updatedAt", "desc").limit(50).get();
   return res.data.map((item) => ({
     ...item,
@@ -89,7 +92,7 @@ async function dashboard() {
 
 exports.main = async (event) => {
   const action = event.action;
-  if (action === "list") return { data: await list(event.keyword) };
+  if (action === "list") return { data: await list(event.keyword, event.filter) };
   if (action === "get") return { data: await get(event.id) };
   if (action === "save") return { data: await save(event.member) };
   if (action === "dashboard") return { data: await dashboard() };
