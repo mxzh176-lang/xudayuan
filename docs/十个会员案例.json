@@ -1,0 +1,122 @@
+[
+  {
+    "memberNo": "M000001",
+    "name": "张小雨",
+    "phone": "13800000001",
+    "level": "普通",
+    "points": 128,
+    "balance": 86.5,
+    "spent": 268,
+    "birthday": "1995-06-18",
+    "favorite": "绿豆冰棍",
+    "note": "常买绿豆和老冰棍，喜欢少甜。"
+  },
+  {
+    "memberNo": "M000002",
+    "name": "李一鸣",
+    "phone": "13800000002",
+    "level": "银卡",
+    "points": 456,
+    "balance": 152,
+    "spent": 520,
+    "birthday": "1992-11-02",
+    "favorite": "酸奶草莓",
+    "note": "每周末带孩子来买，适合推家庭装。"
+  },
+  {
+    "memberNo": "M000003",
+    "name": "王可欣",
+    "phone": "13800000003",
+    "level": "金卡",
+    "points": 836,
+    "balance": 238.8,
+    "spent": 980,
+    "birthday": "1998-03-09",
+    "favorite": "芒果牛奶",
+    "note": "生日月可提醒赠送一支新品试吃。"
+  },
+  {
+    "memberNo": "M000004",
+    "name": "赵嘉豪",
+    "phone": "13800000004",
+    "level": "普通",
+    "points": 92,
+    "balance": 18,
+    "spent": 146,
+    "birthday": "1990-09-21",
+    "favorite": "老冰棍",
+    "note": "余额偏低，消费后建议提醒充值。"
+  },
+  {
+    "memberNo": "M000005",
+    "name": "陈思源",
+    "phone": "13800000005",
+    "level": "黑卡",
+    "points": 1520,
+    "balance": 418,
+    "spent": 1860,
+    "birthday": "1988-12-12",
+    "favorite": "巧克力脆皮",
+    "note": "单位团购客户，节假日前可提前联系。"
+  },
+  {
+    "memberNo": "M000006",
+    "name": "刘晓月",
+    "phone": "13800000006",
+    "level": "银卡",
+    "points": 388,
+    "balance": 96,
+    "spent": 430,
+    "birthday": "1996-04-26",
+    "favorite": "红豆冰棍",
+    "note": "不喜欢太冰，常买回家冷冻。"
+  },
+  {
+    "memberNo": "M000007",
+    "name": "徐明轩",
+    "phone": "13800000007",
+    "level": "普通",
+    "points": 210,
+    "balance": 65.5,
+    "spent": 260,
+    "birthday": "2001-08-08",
+    "favorite": "西瓜冰棍",
+    "note": "学生客群，适合推第二支半价活动。"
+  },
+  {
+    "memberNo": "M000008",
+    "name": "周若琳",
+    "phone": "13800000008",
+    "level": "金卡",
+    "points": 760,
+    "balance": 205,
+    "spent": 890,
+    "birthday": "1993-05-30",
+    "favorite": "椰子冰棍",
+    "note": "常在晚饭后到店，喜欢新品推荐。"
+  },
+  {
+    "memberNo": "M000009",
+    "name": "孙婷婷",
+    "phone": "13800000009",
+    "level": "普通",
+    "points": 64,
+    "balance": 12.5,
+    "spent": 98,
+    "birthday": "1999-10-15",
+    "favorite": "葡萄冰棍",
+    "note": "低余额会员，下次消费后建议充值提醒。"
+  },
+  {
+    "memberNo": "M000010",
+    "name": "吴佳佳",
+    "phone": "13800000010",
+    "level": "银卡",
+    "points": 520,
+    "balance": 176,
+    "spent": 610,
+    "birthday": "1994-01-06",
+    "favorite": "抹茶牛奶",
+    "note": "对坚果过敏，推荐时避开坚果口味。"
+  }
+]
