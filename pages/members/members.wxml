@@ -6,7 +6,7 @@
   <view class="section-title">快速筛选</view>
   <view class="interactive-strip">
     <view class="chip {{filter === 'all' ? 'active' : ''}}" data-filter="all" bindtap="setFilter">全部会员</view>
-    <view class="chip {{filter === 'low' ? 'active' : ''}}" data-filter="low" bindtap="setFilter">低余额</view>
+    <view class="chip {{filter === 'low' ? 'active' : ''}}" data-filter="low" bindtap="setFilter">待完善</view>
     <view class="chip {{filter === 'gold' ? 'active' : ''}}" data-filter="gold" bindtap="setFilter">金卡/黑卡</view>
     <view class="chip {{filter === 'active' ? 'active' : ''}}" data-filter="active" bindtap="setFilter">活跃会员</view>
   </view>
@@ -20,13 +20,13 @@
           <view class="muted">{{item.phone}} · {{item.memberNo}}</view>
         </view>
         <view style="text-align:right;">
-          <view>¥{{item.balance}}</view>
+          <view>{{item.favorite || '未填偏好'}}</view>
           <view class="muted">{{item.points}} 分</view>
         </view>
       </view>
       <view class="member-actions">
         <text class="mini-action">查看资料</text>
-        <text class="mini-action hot">录入消费</text>
+        <text class="mini-action hot">写记录</text>
       </view>
     </navigator>
   </view>

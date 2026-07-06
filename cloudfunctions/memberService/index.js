@@ -21,7 +21,7 @@ async function list(keyword = "", filter = "all") {
         { memberNo: db.RegExp({ regexp: keyword, options: "i" }) }
       ])
     : {};
-  if (!keyword && filter === "low") where = { balance: _.lt(20) };
+  if (!keyword && filter === "low") where = _.or([{ favorite: "" }, { note: "" }]);
   if (!keyword && filter === "gold") where = _.or([{ level: "金卡" }, { level: "黑卡" }]);
   if (!keyword && filter === "active") where = { status: "活跃" };
   const res = await db.collection("members").where(where).orderBy("updatedAt", "desc").limit(50).get();
@@ -74,8 +74,10 @@ async function dashboard() {
   const reminders = await db.collection("reminders").where({ status: "待通知" }).count();
   const totalBalance = members.data.reduce((sum, item) => sum + Number(item.balance || 0), 0);
   const totalSpent = members.data.reduce((sum, item) => sum + Number(item.spent || 0), 0);
+  const completeCount = members.data.filter((item) => item.favorite && item.note).length;
+  const profileRate = members.data.length ? Math.round((completeCount / members.data.length) * 100) : 0;
   const lowBalanceMembers = members.data
-    .filter((item) => Number(item.balance || 0) < 20)
+    .filter((item) => !item.favorite || !item.note)
     .slice(0, 5)
     .map((item) => ({ ...item, balance: money(item.balance) }));
 
@@ -84,7 +86,8 @@ async function dashboard() {
       totalMembers: totalMembers.total,
       totalBalance: money(totalBalance),
       totalSpent: money(totalSpent),
-      pendingReminders: reminders.total
+      pendingReminders: reminders.total,
+      profileRate
     },
     lowBalanceMembers
   };

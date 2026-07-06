@@ -9,15 +9,15 @@
 
   <view class="section-title">云数据库集合</view>
   <view class="card pressable">
-    <view>members：会员资料、余额、积分</view>
-    <view class="muted">consumption_records：消费记录</view>
-    <view class="muted">reminders：客户通知提醒</view>
+    <view>members：会员基础资料、等级、偏好、备注</view>
+    <view class="muted">member_notes：到店记录、偏好记录、经营备注</view>
+    <view class="muted">reminders：客户跟进提醒</view>
   </view>
 
   <view class="section-title">演示数据</view>
   <view class="button-primary" bindtap="seedDemo">初始化演示数据</view>
   <view class="card pressable" style="margin-top: 16rpx;">
-    <view class="muted">用于下午演示：会创建 10 个真实会员案例，包含余额、积分、偏好和备注。正式导入客户数据前可清空集合。</view>
+    <view class="muted">用于下午演示：会创建 10 个真实会员案例，包含等级、偏好、生日和备注。正式导入客户数据前可清空集合。</view>
   </view>
 
   <view class="section-title">交付状态</view>

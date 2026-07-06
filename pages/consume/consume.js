@@ -10,8 +10,7 @@ Page({
       memberKey: "",
       product: "",
       quantity: 1,
-      amount: "",
-      payType: "balance"
+      amount: ""
     },
     previewAmount: "0.00",
     previewPoints: 0
@@ -21,10 +20,6 @@ Page({
     const field = event.currentTarget.dataset.field;
     this.setData({ [`form.${field}`]: event.detail.value });
     this.updatePreview();
-  },
-
-  onPayTypeChange(event) {
-    this.setData({ "form.payType": event.detail.value });
   },
 
   pickProduct(event) {
@@ -48,8 +43,8 @@ Page({
 
   async submit() {
     const form = this.data.form;
-    if (!form.memberKey || !form.product || !Number(form.amount)) {
-      wx.showToast({ title: "请补全消费信息", icon: "none" });
+    if (!form.memberKey || !form.product) {
+      wx.showToast({ title: "请填写会员和记录内容", icon: "none" });
       return;
     }
 
@@ -67,15 +62,15 @@ Page({
         }
       });
       wx.showModal({
-        title: "消费已保存",
+        title: "记录已保存",
         content: res.result.data.message,
-        confirmText: "复制提醒",
+        confirmText: "复制备注",
         success: (modal) => {
           if (modal.confirm) {
             wx.setClipboardData({ data: res.result.data.message });
           }
           this.setData({
-            form: { memberKey: "", product: "", quantity: 1, amount: "", payType: "balance" },
+            form: { memberKey: "", product: "", quantity: 1, amount: "" },
             previewAmount: "0.00",
             previewPoints: 0
           });

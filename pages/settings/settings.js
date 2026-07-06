@@ -3,7 +3,7 @@ Page({
     const confirm = await new Promise((resolve) => {
       wx.showModal({
         title: "初始化演示数据",
-        content: "将写入演示会员、消费记录和提醒，是否继续？",
+        content: "将写入 10 个演示会员资料，是否继续？",
         success: (res) => resolve(res.confirm)
       });
     });

@@ -11,10 +11,10 @@
   </view>
 
   <view class="card pressable" style="margin-top: 20rpx;">
-    <view class="section-title" style="margin-top:0;">账户信息</view>
+    <view class="section-title" style="margin-top:0;">会员标签</view>
     <input class="input" placeholder="积分" value="{{form.points}}" data-field="points" bindinput="onInput" type="digit" />
     <view style="height: 16rpx;"></view>
-    <input class="input" placeholder="余额" value="{{form.balance}}" data-field="balance" bindinput="onInput" type="digit" />
+    <input class="input" placeholder="记录金额，可选" value="{{form.balance}}" data-field="balance" bindinput="onInput" type="digit" />
     <view style="height: 16rpx;"></view>
     <input class="input" placeholder="累计消费" value="{{form.spent}}" data-field="spent" bindinput="onInput" type="digit" />
   </view>
@@ -29,5 +29,5 @@
   </view>
 
   <view class="button-primary" bindtap="saveMember" style="margin-top: 24rpx;">保存会员</view>
-  <view class="button-secondary" wx:if="{{form._id}}" bindtap="goConsume" style="margin-top: 16rpx;">录入本会员消费</view>
+  <view class="button-secondary" wx:if="{{form._id}}" bindtap="goConsume" style="margin-top: 16rpx;">写本会员记录</view>
 </view>

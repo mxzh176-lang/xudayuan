@@ -10,28 +10,28 @@
   <view class="section-title">甜蜜经营看板</view>
   <view class="grid">
     <view class="card sweet-card pressable"><text class="stat-label">会员总数</text><text class="stat-value">{{stats.totalMembers}}</text><text class="muted">云端实时同步</text></view>
-    <view class="card sweet-card pressable"><text class="stat-label">会员余额</text><text class="stat-value">¥{{stats.totalBalance}}</text><text class="muted">储值待消费</text></view>
-    <view class="card sweet-card pressable"><text class="stat-label">累计消费</text><text class="stat-value">¥{{stats.totalSpent}}</text><text class="muted">历史总额</text></view>
+    <view class="card sweet-card pressable"><text class="stat-label">资料完整度</text><text class="stat-value">{{stats.profileRate}}%</text><text class="muted">偏好/备注记录</text></view>
+    <view class="card sweet-card pressable"><text class="stat-label">记录金额</text><text class="stat-value">¥{{stats.totalSpent}}</text><text class="muted">仅做经营参考</text></view>
     <view class="card sweet-card pressable"><text class="stat-label">待通知</text><text class="stat-value">{{stats.pendingReminders}}</text><text class="muted">点击提醒处理</text></view>
   </view>
 
   <view class="section-title">高频操作</view>
   <view class="grid">
-    <navigator class="button-primary" url="/pages/consume/consume">录入消费</navigator>
+    <navigator class="button-primary" url="/pages/consume/consume">写会员记录</navigator>
     <navigator class="button-secondary" url="/pages/member-detail/member-detail">新增会员</navigator>
     <navigator class="button-secondary" url="/pages/members/members">查找会员</navigator>
     <navigator class="button-secondary" url="/pages/reminders/reminders">发送提醒</navigator>
   </view>
 
-  <view class="section-title">需要关怀</view>
+  <view class="section-title">需要补充资料</view>
   <view class="list" wx:if="{{lowBalanceMembers.length}}">
     <view class="card row pressable" wx:for="{{lowBalanceMembers}}" wx:key="_id">
       <view>
         <view>{{item.name}} <text class="muted">{{item.phone}}</text></view>
-        <view class="muted">余额 ¥{{item.balance}}</view>
+        <view class="muted">偏好/备注待完善</view>
       </view>
-      <text class="pill danger">低余额</text>
+      <text class="pill danger">待完善</text>
     </view>
   </view>
-  <view class="empty" wx:else>暂无低余额会员</view>
+  <view class="empty" wx:else>暂无待完善会员</view>
 </view>

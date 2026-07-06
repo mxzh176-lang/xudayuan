@@ -51,7 +51,7 @@ const demoMembers = [
     spent: 146,
     birthday: "1990-09-21",
     favorite: "老冰棍",
-    note: "余额偏低，消费后建议提醒充值。"
+    note: "资料待完善，下次到店补充常买口味。"
   },
   {
     memberNo: "M000005",
@@ -111,7 +111,7 @@ const demoMembers = [
     spent: 98,
     birthday: "1999-10-15",
     favorite: "葡萄冰棍",
-    note: "低余额会员，下次消费后建议充值提醒。"
+    note: "新会员资料较少，下次到店补充生日和偏好。"
   },
   {
     memberNo: "M000010",
@@ -132,7 +132,7 @@ exports.main = async () => {
   const tasks = demoMembers.map((member) => db.collection("members").add({
     data: {
       ...member,
-      status: Number(member.balance) < 20 ? "低余额" : "活跃",
+      status: "活跃",
       createdAt: now,
       updatedAt: now,
       lastVisit: "2026-07-06"

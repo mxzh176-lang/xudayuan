@@ -2,50 +2,38 @@
   <view class="brand-card">
     <image class="brand-logo" src="/images/logo.jpg" mode="aspectFill" />
     <view>
-      <text class="brand-title">甜蜜收银台</text>
-      <text class="brand-subtitle">扣余额、加积分、生成提醒一步完成</text>
+      <text class="brand-title">会员记录本</text>
+      <text class="brand-subtitle">只记录会员到店、偏好和备注，不开通支付</text>
     </view>
   </view>
 
-  <view class="section-title">快捷商品</view>
+  <view class="section-title">快捷记录</view>
   <view class="interactive-strip">
-    <view class="chip" wx:for="{{quickProducts}}" wx:key="name" data-product="{{item.name}}" data-amount="{{item.amount}}" bindtap="pickProduct">{{item.name}} ¥{{item.amount}}</view>
+    <view class="chip" wx:for="{{quickProducts}}" wx:key="name" data-product="{{item.name}}" data-amount="{{item.amount}}" bindtap="pickProduct">{{item.name}}</view>
   </view>
 
   <view class="card">
-    <view class="section-title" style="margin-top:0;">消费信息</view>
+    <view class="section-title" style="margin-top:0;">记录信息</view>
     <input class="input" placeholder="会员编号或手机号" value="{{form.memberKey}}" data-field="memberKey" bindinput="onInput" />
     <view style="height: 16rpx;"></view>
-    <input class="input" placeholder="商品，如 绿豆冰棍" value="{{form.product}}" data-field="product" bindinput="onInput" />
+    <input class="input" placeholder="到店记录/偏好/商品，如 喜欢绿豆冰棍" value="{{form.product}}" data-field="product" bindinput="onInput" />
     <view style="height: 16rpx;"></view>
-    <input class="input" placeholder="数量" value="{{form.quantity}}" data-field="quantity" bindinput="onInput" type="number" />
+    <input class="input" placeholder="数量，可选" value="{{form.quantity}}" data-field="quantity" bindinput="onInput" type="number" />
     <view style="height: 16rpx;"></view>
-    <input class="input" placeholder="金额" value="{{form.amount}}" data-field="amount" bindinput="onInput" type="digit" />
+    <input class="input" placeholder="金额，仅做备注，可不填" value="{{form.amount}}" data-field="amount" bindinput="onInput" type="digit" />
   </view>
-
-  <view class="section-title">扣款方式</view>
-  <radio-group bindchange="onPayTypeChange">
-    <label class="card row pressable">
-      <text>会员余额扣款</text>
-      <radio value="balance" checked="{{form.payType === 'balance'}}" />
-    </label>
-    <label class="card row pressable" style="margin-top: 16rpx;">
-      <text>现金/微信支付</text>
-      <radio value="cash" checked="{{form.payType === 'cash'}}" />
-    </label>
-  </radio-group>
 
   <view class="card preview-card">
     <view class="row">
-      <text class="muted">本次消费</text>
+      <text class="muted">记录金额</text>
       <text class="preview-money">¥{{previewAmount}}</text>
     </view>
     <view class="row" style="margin-top: 12rpx;">
-      <text class="muted">预计增加积分</text>
-      <text class="pill warn">+{{previewPoints}} 分</text>
+      <text class="muted">记录类型</text>
+      <text class="pill warn">会员跟进</text>
     </view>
-    <view class="muted" style="margin-top: 16rpx;">保存后会自动生成一条客户余额提醒，可直接复制发送。</view>
+    <view class="muted" style="margin-top: 16rpx;">本页不接微信支付、不扣款，只把会员到店情况和偏好备注保存到微信云数据库。</view>
   </view>
 
-  <view class="button-primary" bindtap="submit" style="margin-top: 24rpx;">保存消费并生成提醒</view>
+  <view class="button-primary" bindtap="submit" style="margin-top: 24rpx;">保存会员记录</view>
 </view>
