@@ -1,0 +1,147 @@
+page {
+  color: #183235;
+  background: #f6fbfa;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  color: #fff;
+  background: #103f42;
+}
+
+.brand-logo {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 16rpx;
+}
+
+.brand-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 800;
+}
+
+.brand-subtitle {
+  display: block;
+  margin-top: 8rpx;
+  color: #bde1dd;
+  font-size: 24rpx;
+}
+
+.section-title {
+  margin: 28rpx 0 16rpx;
+  font-size: 32rpx;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+}
+
+.card {
+  padding: 24rpx;
+  border: 1rpx solid #dce9e7;
+  border-radius: 16rpx;
+  background: #fff;
+  box-shadow: 0 10rpx 28rpx rgba(24, 50, 53, 0.06);
+}
+
+.stat-label {
+  color: #65797c;
+  font-size: 24rpx;
+}
+
+.stat-value {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+
+.muted {
+  color: #65797c;
+}
+
+.pill {
+  display: inline-flex;
+  padding: 6rpx 14rpx;
+  border-radius: 999rpx;
+  color: #0d6f68;
+  background: #e8f7f5;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.pill.warn {
+  color: #8a5b00;
+  background: #fff2c6;
+}
+
+.pill.danger {
+  color: #a53030;
+  background: #ffe5e5;
+}
+
+.button-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: 16rpx;
+  color: #fff;
+  background: #0f8f86;
+  font-weight: 800;
+}
+
+.button-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: 16rpx;
+  color: #0d6f68;
+  background: #e8f7f5;
+  font-weight: 800;
+}
+
+.input {
+  width: 100%;
+  min-height: 84rpx;
+  padding: 0 22rpx;
+  border: 1rpx solid #dce9e7;
+  border-radius: 14rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.empty {
+  padding: 60rpx 20rpx;
+  color: #65797c;
+  text-align: center;
+}

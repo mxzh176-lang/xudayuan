@@ -1,0 +1,22 @@
+{
+  "description": "徐大源手工冰棍会员管理小程序",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "latest",
+  "appid": "请替换为你的小程序AppID",
+  "projectname": "xudayuan-popsicle-member",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "condition": {}
+}

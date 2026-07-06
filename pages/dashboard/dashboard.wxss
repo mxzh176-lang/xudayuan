@@ -1,0 +1,3 @@
+.grid navigator {
+  box-sizing: border-box;
+}

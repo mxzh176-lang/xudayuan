@@ -1,0 +1,24 @@
+<view class="page">
+  <input class="input" placeholder="搜索姓名、手机号、会员编号" value="{{keyword}}" bindinput="onKeywordInput" confirm-type="search" bindconfirm="search" />
+  <view style="height: 20rpx;"></view>
+  <view class="button-primary" bindtap="search">搜索会员</view>
+
+  <view class="section-title">会员列表</view>
+  <view class="list" wx:if="{{members.length}}">
+    <navigator class="card" wx:for="{{members}}" wx:key="_id" url="/pages/member-detail/member-detail?id={{item._id}}">
+      <view class="row">
+        <view>
+          <view>{{item.name}} <text class="pill">{{item.level}}</text></view>
+          <view class="muted">{{item.phone}} · {{item.memberNo}}</view>
+        </view>
+        <view style="text-align:right;">
+          <view>¥{{item.balance}}</view>
+          <view class="muted">{{item.points}} 分</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="empty" wx:else>暂无会员，先新增或初始化演示数据</view>
+
+  <navigator class="button-primary" url="/pages/member-detail/member-detail" style="margin-top: 24rpx;">新增会员</navigator>
+</view>

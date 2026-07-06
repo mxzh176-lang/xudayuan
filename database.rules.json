@@ -1,0 +1,14 @@
+{
+  "members": {
+    "read": "auth != null",
+    "write": "auth != null"
+  },
+  "consumption_records": {
+    "read": "auth != null",
+    "write": "auth != null"
+  },
+  "reminders": {
+    "read": "auth != null",
+    "write": "auth != null"
+  }
+}

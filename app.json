@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/dashboard/dashboard",
+    "pages/members/members",
+    "pages/member-detail/member-detail",
+    "pages/consume/consume",
+    "pages/reminders/reminders",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationBarTitleText": "徐大源手工冰棍",
+    "navigationBarBackgroundColor": "#103f42",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f6fbfa"
+  },
+  "tabBar": {
+    "color": "#65797c",
+    "selectedColor": "#0f8f86",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/dashboard/dashboard",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/members/members",
+        "text": "会员"
+      },
+      {
+        "pagePath": "pages/consume/consume",
+        "text": "消费"
+      },
+      {
+        "pagePath": "pages/reminders/reminders",
+        "text": "提醒"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
